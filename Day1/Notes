@@ -1,0 +1,30 @@
+Setup for VIM
+vim .vimrc
+'''
+Syntax enable
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set number
+filetype indent on
+set autoindent
+'''
+
+
+# list
+a = [1, 2, 3] 
+# tuple
+a = (1, 2, 3)
+
+Both lists and tuples can contain differing data types. No need to type cast.
+
+'hello world'.split()
+['hello', 'world']
+
+'hello:world'.split(:)
+['hello', 'world']
+
+s = hello
+l = list(s)
+['h', 'e', 'l', 'l', 'o']
+l[0] = 'j'

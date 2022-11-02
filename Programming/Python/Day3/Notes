@@ -1,0 +1,24 @@
+https://git.cybbh.space/programming/python/public/-/blob/master/activities/pe1/part2/part2.adoc
+
+fp = open("test.txt")
+fp.close
+r = read(default)
+w = write
+
+with open("test.txt") as fp:
+    pass
+
+with open('test.txt', 'w') as fp:
+    fp.write('First Line \n')
+    lines = ['Second Line\n', 'Third Line\n', 'Fourth line\n']
+    fp.writelines(lines)
+
+Really just lookup python file io
+https://runestone.academy/ns/books/published/fopp/Files/ChapterAssessment.html
+mess around with stuff like x = fp.read(???) and x = fp.readlines()
+for line in fp
+
+some key take aways from today are
+- list.split()
+- list = ''.join(list)
+- list.append(element)

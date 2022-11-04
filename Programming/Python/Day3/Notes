@@ -22,3 +22,4 @@ some key take aways from today are
 - list.split()
 - list = ''.join(list)
 - list.append(element)
+- instead of line = line.split(), use for word in line.split()

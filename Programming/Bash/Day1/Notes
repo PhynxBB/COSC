@@ -1,1 +1,63 @@
+BASH - Bourne-Again-Shell
+Improved and free version of sh
+SHELL - A shell is a macro processor that executes commands
+    Command interpreter
+    Programming language
 
+echo $SHELL
+echo $0
+cat /etc/shells
+
+Linux Commands and Switches
+Man
+    man bash
+    man find
+    G
+    g
+    /pattern
+    ?pattern
+    &pattern
+    n or shift+n
+    q
+shopt
+
+CTRL A Start of line
+CTRL E End of line
+CTRL U Erase to start of line
+
+Order of Evaluation
+1. Redirection
+2. Alias
+3. Parameter expansion, command substitution, arithmetic expansion, quote removal
+4. Shell Function
+5. Built-In commands
+6. Hash tables
+7. Path variable
+8. Error{eg command not found}
+
+FileSystem and Manipulation
+touch
+mkdir
+rmk
+rmkdir
+ls
+cd
+
+Links
+    Symbolic - Shortcut/pointer
+    Hard - Persistant, cannot cross file systems
+
+Processes and Memory
+Process Hierarchy
+    Kernel
+        Init - 01
+            BASH
+                PS
+Processes
+    ps
+    top
+Terminating
+    kill
+    killall
+
+tail /etc/passwd | cut -d: -f1

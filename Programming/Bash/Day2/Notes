@@ -1,0 +1,60 @@
+Overview
+- Day 1 Review
+
+- alias
+    alias
+    unalias
+
+- awk
+    awk -F: '{print $1}'
+        displays 1st field delimited by a ':'
+    awk '$1 == "text"' file.txt 
+    awk '/thor/{print $0}'i
+    {$1=$5="";print "Something"$0"Something Else"}i
+    awk -v ss=$SUBJECT -v vv=$VERB '{$1=ss;$2=vv;print}'
+    'OFS=":"{print}'
+
+- sed
+    sed 's/abc/123'
+        replace first occurrence of abc in every line with 123
+    sed 's/abc/123/g'
+        replace every  occurrence of abc in every line with 123
+    sed '/sus/d'
+        delete the sus lines. Output everything else
+    sed -i '<expression>' file.txt
+        sed inplace to make changes permanent in file.txt
+
+- sort
+    sort | sort content according to position on the ASCII table
+    sort -n | sorts content numerically
+    sort -u | sort content uniquely
+    sort -nr | sort content numerically reversed
+    sort -t'+' | specify field seperator '+'
+
+- uniq
+    uniq | select content uniquely, must already be sorted
+    unit -c | select content uniquely with a count reading
+
+- grep
+    IPs | "(\d{1,3}\.){3}\d{1,3}
+
+- Conditionals
+    -e | file exists?
+    -f | file exists and is a regular file?
+    -d | file exists and is a directory?
+    == | strings, is equal to strings
+    -eq| numbers, is equal to
+    != | strings, is not equal to
+
+    if [[ condition ]]; then
+        commands
+    elif [[ condition ]]; then
+        commands
+    else
+        commands
+    fi
+
+- Command substitution
+    VAR=$(command) or VAR=$(command | command | command..)
+
+- Activities 6-10

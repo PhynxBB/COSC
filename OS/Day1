@@ -1,0 +1,16 @@
+Just basic review of powershell, seems to be important for this module. Familiarize with Get-Help, utilizing options such as -online and -detailed
+Get-History
+Get-CimClass
+Get-CimInstance -class
+
+Powershell.exe is contingent on - 
+System.Management.Automation.dll
+
+Read From Top Down
+All Users, All Hosts
+All Users, Current Host
+Current User, All Hosts
+Current User, Current Host
+
+19
+10.50.29.125

@@ -1,0 +1,19 @@
+Key
+	Subkey
+		Name : Data(Value)
+
+5 Registry Hives
+HKEY_LOCAL_MACHINE (HKLM)
+
+HKEY_USERS (HKU)
+
+HKEY_CLASSES_ROOT (HKCR)
+	Is a merged view of HKLM\Software\Classes and HKCU\Software\Classes
+
+HKEY_CURRENT_USER (HKCU)
+	Pointer to HKU depending on who is currently logged in
+	Is HKU\<SID OF CURRENT USER>
+
+HKEY_CURRENT_CONFIG (HKCC)
+	Can be located with value HKLM\SYSTEM\Select\Current
+New-PsDrive -name Fileserver -PSProvider FileSystem -Root "\\file-server\warrior share"

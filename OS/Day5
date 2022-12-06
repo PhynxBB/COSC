@@ -1,0 +1,56 @@
+
+
+Big Mike Got Killed In Russia 1 (SYSV)
+    BIOS
+    MBR
+    GRUB
+    Kernel
+    Init (SysV or SystemD)
+    Runlevels
+
+Ugly Girls Love Kissing It Raw
+    UEFI
+    GPI
+    LILO
+    Kernel
+    Init
+    Runlevels
+
+BIOS Info CMD
+sudo dmidecode -t bios
+ls /sys/firmware - look for efi
+
+To view MBR
+xxd -l 512 -g 1 /dev/sda1
+magic number 55 aa
+
+dd if=/dev/sda of=MBRCopy bs=1 count=512
+
+Kernel
+    Uncompresses itself into RAM
+    Establishes memory management, detects CPU type, page tables
+    Mounts the root '/' filesystem
+    Kernel is process 0 [kthreadd]
+    Executes /sbin/init or systemd, the very first process started by the kernel with a PID of 1
+    ls -l /sbin/init to determine which Init system you are using
+
+Run Levels -
+init0 - halt
+init1 - single user mode (root)
+init2 - multi-user
+init3 - multi-user with networking
+init4 - not used
+init5 - GUI
+init6 - Reboot
+
+Init Config - /etc/inittab
+Specific Run Level Configs - ls /etc/rc2.d/
+
+ssh -J user@ip user2@ip2 
+
+systemctl list-dependencies target
+systemctl cat
+systemctl --help
+
+My understanding of MBR disks is that the first 446 bytes is the bootstrap code area. And with the subsequent 64 bytes being the partition table
+

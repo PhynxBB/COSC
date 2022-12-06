@@ -1,0 +1,7 @@
+HKLM\SYSTEM\CurrentControlSet\Services
+
+tasklist /m /fi "IMAGENAME eq chrome.exe"
+schtasks /query /v /fo list
+
+Sysinternals
+

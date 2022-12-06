@@ -1,0 +1,29 @@
+Linux Processes
+
+Startup Processes (SYSV)
+    There are two primary processes after startup
+        kernel-space [kthreadd]
+        user-space /sbin/init
+    All processes are forked from those two ^
+
+Kernel vs User Space
+    Kernel run in its own memory space
+    User runs in a seperate memory space, only what they need. cant share
+
+System Calls
+    Interaction between a process and the kernel
+    Two system calls !!!
+        fork() the kernel creates a nearly identicaly copy of process
+        exec() kernel starts a program, replacing the former
+    shell -> fork() -> shell
+                   `-> copy of shell -> exec(ls) -> ls
+    ps -elf | awk '{print $4, $15}'
+    ps -elf --forest --ppid 2
+    ps -Nlf --pid 2
+    btop
+
+Process Ownership
+    UID of ps
+    RUID (Real user ID)
+    EUID (Effective user ID)
+    sudo lsof -i -P -n | grep LISTEN

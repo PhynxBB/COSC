@@ -1,0 +1,25 @@
+Getting User SID
+get-wmiobject win32_useraccount | select name,sid
+get-localuser | select name, sid
+wmic useraccount get name,sid
+
+User Assists. Programs user has opened?
+Get-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\Count\"
+Get-ItemProperty "Registry::HKEY_USERS\S-1-5-21-1108291066-2452889906-734543113-1004\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\Count"
+Complete List of CLSID key (GUID) Windows 10
+
+Windows Background Activity Manager (BAM) Win10 Only
+HKLM\SYSTEM\CurrentControlSet\Services\Bam\State\UserSettings\*
+Get-Item HKLM:\SYSTEM\CurrentControlSet\Services\bam\State\UserSettings\*
+
+$r content of deleted file
+$i original path and name
+gci 'C:\$Recycle.Bin\' -verbose -Force -Recurse
+gci c:\Windows\Prefetch -ErrorAction Continue | Select -First 10
+
+Jump Lists
+gci -Recurse C:\Users\*\AppData\Roaming\Microsoft\Windows\Recent -ErrorAction Continue | select Fullname, LastAccessTime
+gci -recurse C:\Users\andy.dwyer\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations\
+
+Get-Item "REGISTRY::HKEY_USERS\*\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.txt" | select -Expand property | ForEach-Object { [System.Text.Encoding]::Default.GetString((Get-ItemProperty -Path "REGISTRY::HKEY_USERS\*\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.txt" -Name $_).$_)}
+

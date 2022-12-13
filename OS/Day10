@@ -1,0 +1,10 @@
+# Active Directory Enumeration
+
+Get-ADFineGrainedPasswordPolicy/
+Get-ADGroupMember -Identity 'Power Users' -Recursive
+Get-Aduser -identity 'dadsad' -Recursive
+Get-ADUser -filter {Enabled -eq "FALSE"} -properties name, enabled
+Add-ADGroupMember -Identity "Administrators" -Members Guest
+Get-ADGroupMember -Identity "Administrators" -Recursive | %{Get-ADUser -Identity $_.DistinguishedName}
+gpresult
+volitile.exe -f file --profile=WinXPSP2x86

@@ -1,0 +1,66 @@
+# Networking Fundamentals
+
+Binary Refresher
+    Byte = 8 bits
+    Nibble = 4 bits
+    Half Word = 16 bits
+    Word = 32 bits
+
+
+OSI Model
+    (1) Physical
+        - Hardware Specifications
+        - Encoding and signaling
+        - Data Transmission and Reception
+        - Physical Network Design
+
+    (2) Data Link
+        - MAC (Media Access Control)
+        - LLC (Logical Link Control)
+        - Ethernet Header (0x0800 - IPv4; 0x0806 - ARP; 0x86DD - IPv6)
+        - Vlan Tag (0x8100)
+        - ARP Header (correlates IP addresses to MAC addresses)
+
+    (3) Network
+        - IPv4 Headers
+        - Fragmentation
+
+    (4) Transport
+        - TCP
+        - UDP
+
+    (5) Session
+        - SOCKS
+        - NetBIOS
+        - PPTP/L2TP
+        - RPC
+
+    (6) Presentation
+        - Translation
+        - Formatting
+        - Encoding
+        - Encryption
+        - Compression
+
+    (7) Application
+        - FTP (TCP 20/21)
+        - SSH (TCP 22)
+        - TELNET (TCP 23)
+        - SMTP (TCP 25)
+        - TACAS (TCP 49)
+        - HTTP/S (TCP 80/443)
+        - POP (TCP 110)
+        - IMAP (TCP 143)
+        - RDP (TCP 3389)
+        - DNS Q,R (TCP/UDP 53)
+        - DHCP (UDP 67/68)
+        - TFTP (UDP 69)
+        - NTP (UDP 123)
+        - SNMP (UDP 161/162)
+        - RADIUS (UDP 1645/1646/1812/1813)
+        - RDP (UDP 1023 < *)
+
+Organizations
+    IETF - Maintains RFCS
+    IEEE - Maintains 802.11*
+    IANA - Assigns IP blocks to regions/buisnesses

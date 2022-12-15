@@ -1,0 +1,28 @@
+# Packet Creation and Socket Programming
+
+Socket Types
+    Stream Sockets - Connection oriented and sequenced; methods for connection and teardown. Used with TCP, SCTP, and Bluetooth
+    Datagram Sockets - Connectionless; designed for quickly sending and receiving data. Used with UDP
+    Raw Sockets - Direct sending and receiving of IP packets without automatic protocol-specific formatting.
+
+    User Space - Stream Sockets and Datagram Sockets (tcpdump, wireshark, netcat, /dev/tcp || /dev/udp)
+    Kernel Space - Raw Sockets (hardware, tcpdump || wireshark to capture on the wire, nmap for OS id, netcat to create listener within WKPR)
+
+Socket Creation and Privilege Level
+    User Space Sockets - Most common and do not require elevated privileges.
+    Kernel Space Sockets - Attempts to access hardware directly on behalf of a user; requires elevated privileges.
+
+Python Terminology
+    Libraries
+        Modules
+            Functions
+            Exceptions
+            Constants
+            Objects
+            Types
+    Network sockets use the Python3 Socket library and socket.socket function
+        import socket
+        s = socket.socket(socket.FAMILY, socket.TYPE, socket.PROTOCOL)
+    
+    The Socket.Socket Function
+        

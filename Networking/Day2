@@ -1,0 +1,22 @@
+# Network Fundamentals
+
+TCPDUMP
+    sudo tcpdump -d (lists interfaces)
+    sudo tcpdump -i interface -nXXvvv (displays verbose well formatted)
+    sudo tcpdump -i interface -w file (writes pcap to file)
+    sudo tcpdump -r file (reads pcap file)
+    sudo tcpdump port xxx or xxx -vnXX (filters traffic to specific port)
+   
+BPF
+    tcpdump {A}[B:C] {D} {E} {F} {G}
+    A = Protocol (ether | arp | ip | ip6 | icmp | tcp | udp)
+    B = Header Byte offset
+    C = Byte Length. Can be 1, 2, or 4 (Default 1)
+    D = Bitwise Mask (&)
+    E = Operator
+    F = Result of Expression
+    G = Logical Operator
+    
+    Bitwise Masking
+        
+

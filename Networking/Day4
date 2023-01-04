@@ -1,0 +1,41 @@
+# Movement and Data Transfer
+
+Common Methods For Transferring Data
+    TFTP
+    FTP
+        Active
+        Passive
+    SFTP
+    SCP
+    
+SCP Syntax
+
+Local To Remote (Upload)
+    scp filepath username@targetip:targetpath
+
+Remote To Local (Download) 
+    scp username@targetip:filepath filepath
+
+Remote To Remote (??? Fucking something)
+    scp -3 username@sourceip:sourcefile username@targetip:targetdest
+
+Alternate Ports
+ssh user@ip -p port
+scp -P port
+
+Poor Man Chat Server
+nc -lp 1337
+nc ip 1337
+
+NC Relays
+    nc -lp 1234 0<pipe | nc -lp 1111 1>pipe
+    Okay so basically how I interpret this issssss the following.
+    This first section is using a named pipe to act as a buffer
+    It is listening first for a file
+    That file is then piped as the STDIN for a netcat listener in the second part
+    Once you run a nc ip port command, itll take that STDIN
+
+    nc 172.16.82.115 9876 0<pipe | nc 10.50.22.236 1111 1>pipe
+    Reaching out to a listener, providing whatever is given as STDIN to the next client nc reaching out to a serve
+
+for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done

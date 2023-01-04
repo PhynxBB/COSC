@@ -1,0 +1,37 @@
+# Goddamn Motherfucking SSH Tunneling
+
+SSH Dynamic Port Fowarding
+    ssh -D <port> -p <alt port> <user>@<pivot ip> -NT
+    Proxychains default port is 9050
+    Allows the use of scripts and other userspace programs through the tunnel
+
+Covert Channel
+    Method of creating a capability to transfer information objects between endpoints that should not be allowed based on policy.
+        ICMP
+        DNS
+        HTTP
+
+Tunnels Broken Down
+    
+    Local Tunnels
+    
+        Examples:
+        @IH > ssh user@A_IP -L 12345:B_IP:4444 (A tunnel from IH, through A, to B)
+        @A > ssh user@B_IP -l 1111:localhost:80 (A tunnel from A, to B)
+
+        Explanation:
+        Connection part is easy
+        For -L portion, I'm creating this port(entrance) to a tunnel to this ip at this port
+        Why would we use a local host after the local portion of an ssh tunnel.
+        A little rambling from my mind, I think the PORT:IP:PORT after the -L portion of a local tunnel is as follows.
+        The first PORT is the port that will be opened and established on YOUR LOCAL SYSTEM(machine that ran the command)
+        Post connection, any traffic on that first port, foward to the IP:PORT as a socket sort of structure.
+        The above question needs to get resolved as there seems to be a lapse in my understanding of the subject.
+        A good way to think of local ports is you're "pretending" to have whatever the remote host has at port 4444, in our local port of 12345
+
+        Use Cases:
+        Pulling web servers down
+
+    Remote Tunnels
+
+        Examples:

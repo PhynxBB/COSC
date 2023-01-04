@@ -9,6 +9,6 @@ Class is broken into a couple of sections, with each major module having its on 
   
   OS
   Networking
-  TBD...
+  TBD
   
 If you're looking for anything specific, ping me on Discord (Phynx#0342)
